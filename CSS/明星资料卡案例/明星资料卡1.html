@@ -1,0 +1,93 @@
+<!-- 
+  @Author: Gravel
+  @Date:   2024-01-05 11:30:30
+  @Last Modified by:   Gravel
+  @Last Modified time: 2024-01-05 12:34:46
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        img{
+            display: block;
+        }
+        .box{
+            width: 350px;
+            border: 5px solid red;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .box img{
+            width: 100%;
+            transition: all 1s;
+        }
+        .box:hover img{
+            transform: translateX(50px);
+            opacity: 0.5;
+        }
+        
+        .box h2{
+            position: absolute;
+            left: 50px;
+            top:10px;
+            color: white;
+            transition: all 1s 1s;
+        }
+        .box:hover h2{
+            transform: translateX(100px);
+        }
+        .box p{
+            position: absolute;
+            left: 50px;
+            width: 100px;
+            color: white;
+            background-color: darkblue;
+            transition:all 0.3s ;
+            
+        }
+        .box .p1{
+            top:100px;
+            transform: translateY(400px);
+            
+        }
+        .box:hover .p1{
+            transform: translateY(0);
+        }
+        
+        .box .p2{
+            top:200px;
+            transform: translateX(500px);
+        }
+        .box:hover .p2{
+            transform: translateX(0);
+        }
+        .box .p3{
+            top:300px;
+            transform: translateX(-450px);
+        }
+        .box:hover .p3{
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="img/1.png" alt="">
+        <h2>title</h2>
+        <p class="p1">1111</p>
+        <p class="p2">2222</p>
+        <p class="p3">3333</p>
+    </div>
+</body>
+
+</html>

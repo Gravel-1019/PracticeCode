@@ -1,0 +1,139 @@
+<!-- 
+  @Author: Gravel
+  @Date:   2024-01-04 13:59:10
+  @Last Modified by:   Gravel
+  @Last Modified time: 2024-01-04 21:06:38
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        ul{
+            margin: 10px auto;
+            width: 600px;
+            height: 400px;
+            position: relative;
+            
+        }
+        li{
+            height: 200px;
+            width: 60px;
+            position: absolute;
+            left:50%;
+            margin-left: -30px;
+            bottom: 30px;
+            text-align: center;
+            transform-origin: bottom center;
+            border-radius: 10px;
+            transition: all 2s;
+            box-shadow: 3px 5px 5px rgba(0,0,0,0.4);
+        }
+        ul .f{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            color:white;
+            font-size: 25px;
+        }
+        ul li:not(:nth-child(7)){
+            opacity: 0;
+        }
+        ul:hover li{
+            opacity: 1;
+        }
+        ul li:nth-child(1),ul li:nth-child(13){
+            background-color: lightgoldenrodyellow;
+        }
+        ul li:nth-child(2),ul li:nth-child(12){
+            background-color: lightblue;
+        }
+        ul li:nth-child(3),ul li:nth-child(11){
+            background-color: deeppink;
+        }
+        ul li:nth-child(4),ul li:nth-child(10){
+            background-color: deepskyblue;
+        }
+        ul li:nth-child(5),ul li:nth-child(9){
+            background-color: lightpink;
+        }
+        ul li:nth-child(6),ul li:nth-child(8){
+            background-color: yellow;
+        }
+        ul li:nth-child(7){
+            background-color: red;
+        }
+        ul:hover li:nth-child(1){
+            transform: rotate(90deg);
+        }
+        ul:hover li:nth-child(13){
+            transform: rotate(-90deg);
+        }
+        ul:hover li:nth-child(2){
+            transform: rotate(75deg);
+        }
+        ul:hover li:nth-child(12){
+            transform: rotate(-75deg);
+        }
+        ul:hover li:nth-child(3){
+            transform: rotate(60deg);
+        }
+        ul:hover li:nth-child(11){
+            transform: rotate(-60deg);
+        }
+        ul:hover li:nth-child(4){
+            transform: rotate(45deg);
+        }
+        ul:hover li:nth-child(10){
+            transform: rotate(-45deg);
+        }
+        ul:hover li:nth-child(5){
+            transform: rotate(30deg);
+        }
+        ul:hover li:nth-child(9){
+            transform: rotate(-30deg);
+        }
+        ul:hover li:nth-child(6){
+            transform: rotate(15deg);
+        }
+        ul:hover li:nth-child(8){
+            transform: rotate(-15deg);
+        }
+        ul li span:not(nth-child(7)){
+            display: none;
+        }
+        ul:hover li span{
+            display: inline;
+        }
+        ul:hover .f span{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><span>还</span></li>
+        <li><span>不</span></li>
+        <li><span>风</span></li>
+        <li><span>春</span></li>
+        <li><span>道</span></li>
+        <li><span>复</span></li>
+        <li class="f"><span>新</span><span>年</span><span>快</span><span>乐</span></li>
+        <li><span>去</span></li>
+        <li><span>慢</span></li>
+        <li><span>花</span></li>
+        <li><span>落</span></li>
+        <li><span>疑</span></li>
+        <li><span>只</span></li>
+    </ul>
+</body>
+</html>

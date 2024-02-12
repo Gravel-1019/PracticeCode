@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        h1 {
+            animation: run 3s linear infinite;
+            font-size: 100px;
+        }
+        
+        @keyframes run {
+            0% {
+                color: red;
+                font-size: 50px;
+                
+            }
+
+            16.7% {
+                color: orange;
+                font-size: 70px;
+                
+            }
+
+            33.3% {
+                color: yellow;
+                font-size: 90px;
+                
+            }
+
+            50% {
+                color: green;
+                font-size: 110px;
+                
+                
+            }
+
+            66.7% {
+                color: blue;
+                font-size: 90px;
+            }
+
+            83.3% {
+                color: indigo;
+                font-size: 70px;
+                
+            }
+
+            100% {
+                color: violet;
+                font-size: 50px;
+                
+            }
+            
+        }
+        @keyframes run1 {
+            0% {
+                background-color: red;
+                font-size: 50px;
+                
+            }
+
+            16.7% {
+                background-color: orange;
+                font-size: 70px;
+                
+            }
+
+            33.3% {
+                background-color: yellow;
+                font-size: 90px;
+                
+            }
+
+            50% {
+                background-color: green;
+                font-size: 110px;
+                
+                
+            }
+
+            66.7% {
+                background-color: blue;
+                font-size: 90px;
+            }
+
+            83.3% {
+                background-color: indigo;
+                font-size: 70px;
+                
+            }
+
+            100% {
+                background-color: violet;
+                font-size: 50px;
+                
+            }}
+
+    </style>
+</head>
+<body id = 'animation-container'>
+    <h1 id="box"></h1>
+    
+    <script>
+        
+        var targetDate = new Date("2024/1/30 20:30:0")
+        
+        function diffTime(current,target){
+            var sub = Math.ceil((target - current) / 1000)
+            var day = parseInt(sub / (60 * 60 * 24))
+            var hours = parseInt(sub % (60 * 60 * 24) / (60*60))
+            var minutes = parseInt(sub%(60*60)/60)
+            var seconds = sub%60
+            obj = {
+                day:day,
+                hours:hours,
+                minutes:minutes,
+                seconds:seconds,
+            }
+            return obj
+        }
+        setInterval(function(){
+            var currentDate = new Date()
+            var res = diffTime(currentDate, targetDate)
+            box.innerHTML = `${res.day}天${res.hours}时${res.minutes}分${res.seconds}秒`
+        },1000)
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        用户名：
+        <input type="text" id="username">
+    </div>
+    <div>
+        密码：
+        <input type="password" id="password">
+    </div>
+    <div>
+        <button id="login">登陆</button>
+    </div>
+    <script>
+        var uservalue = localStorage.getItem("username")
+        var passvalue = localStorage.getItem("password")
+        if (uservalue && passvalue){
+            username.value = uservalue
+            password.value = passvalue
+        }
+
+
+        login.onclick = function(){
+            console.log(`用户名：${username.value},密码：${password.value}`)
+        localStorage.setItem('username',username.value)
+        localStorage.setItem('password',password.value)
+        }
+    </script>
+</body>
+</html>

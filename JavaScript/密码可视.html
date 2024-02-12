@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="password" name="" id="password">
+    <button id="eyeBtn">eye</button>
+    <script>
+        var passInput = document.getElementById("password")
+        var eyeBtn = document.querySelector("#eyeBtn")
+        eyeBtn.onclick = function () {
+
+            if (passInput.type === "password") {
+                passInput.type = "text"
+            } else {
+                passInput.type = "password"
+            }
+        }
+    </script>
+</body>
+
+</html>
