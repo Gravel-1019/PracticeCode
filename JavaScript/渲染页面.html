@@ -28,12 +28,39 @@
 
 <body>
     <ul>
-        <li>
+        <!-- <li>
             <img src="https://static.maizuo.com/pc/v5/usr/movie/482e43f69efd52ec64575c95786c60d8.jpg?x-oss-process=image/quality,Q_70" alt="">
             <h3>熊出没·逆转时空</h3>
-            <p>观众评分</p>
-        </li>
+            <p></p>
+        </li> -->
     </ul>
+    <script>
+        var filmList = [
+            {
+                url: "https://static.maizuo.com/pc/v5/usr/movie/482e43f69efd52ec64575c95786c60d8.jpg?x-oss-process=image/quality,Q_70",
+                title: "熊出没·逆转时空",
+                grade: 9.8,
+            },
+            {
+                url: "https://static.maizuo.com/pc/v5/usr/movie/482e43f69efd52ec64575c95786c60d8.jpg?x-oss-process=image/quality,Q_70",
+                title: "熊出没·逆转时空",
+                grade: 9.8,
+            },
+            {
+                url: "https://static.maizuo.com/pc/v5/usr/movie/482e43f69efd52ec64575c95786c60d8.jpg?x-oss-process=image/quality,Q_70",
+                title: "熊出没·逆转时空",
+                grade: 9.8,
+            },
+        ]
+        var fileIems = filmList.map(function (item) {
+            return `<li>
+            <img src="${item.url}" alt="">
+            <h3>${item.title}</h3>
+            <p>${item.grade}</p>`
+        })
+        var oul = document.querySelector("ul")
+        oul.innerHTML = fileIems.join("")
+    </script>
 </body>
 
 </html>
