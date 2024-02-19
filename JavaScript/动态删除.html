@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+
+    </ul>
+    <script>
+        var arr = ["111", "222", "333"]
+        for (var i = 0; i < arr.length; i++) {
+            var oli = document.createElement("li")
+            oli.innerHTML = arr[i]
+            var obutton = document.createElement("button")
+            obutton.innerHTML = "delet"
+            obutton.onclick = handler
+            oli.appendChild(obutton)
+            list.appendChild(oli)
+        }
+        function handler() {
+            this.parentNode.remove()
+        }
+        //map映射方案
+        // liArr = arr.map(function (item, index, arr) {
+        //     return `<li>${item}</li>`
+        // })
+        // for (var i = 0; i < liArr.length; i++) {
+        //     list.innerHTML += liArr[i] + "<button>123</button>"
+
+        // }
+    </script>
+</body>
+
+</html>

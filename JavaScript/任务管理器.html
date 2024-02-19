@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taks Manager</title>
+    <style>
+        ul {
+            list-style-type: disc;
+        }
+
+        button:hover {
+            background-color: aliceblue;
+            border: 1px solid black;
+        }
+
+        .active {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Taks Manager</h1>
+    <input type="text" id="inp">
+    <button id="btn">提交</button>
+    <button id="delet">删除</button>
+    <ul></ul>
+    <script>
+
+        var taskList = []
+        oBtn = document.getElementById("btn")
+        oInp = document.getElementById("inp")
+        oUl = document.getElementsByTagName("ul")[0]
+        oDelet = document.querySelector("#delet")
+        oLi = document.getElementsByTagName("li")
+        index = getLocatStorage(oUl, taskList, index)
+
+        oBtn.onclick = function () {
+
+            if (oInp.value.trim() == "") {
+                alert("内容不为空！")
+                return
+            }
+            if (!(taskList.indexOf(oInp.value) === -1)) {
+                alert("已经存在相同任务！")
+                return
+            }
+            oUl.innerHTML += `<li>${oInp.value}</li>`
+            console.log("index:" + index)
+            localStorage.setItem(index, oInp.value)
+            index += 1
+            taskList.push(oInp.value)
+
+        }
+        oDelet.onclick = function () {
+            activeLi = document.getElementsByClassName("active")[0]
+            liList = oUl.innerHTML.split("\n")
+            console.log(oUl.innerHTML)
+            console.log(liList)
+        }
+
+        for (var n = 0; n < oLi.length; n++) {
+            oLi[n].onclick = function () {
+                for (var q = 0; q < oLi.length; q++) {
+                    oLi[q].classList.remove("active")
+                }
+                oLi[n].classList.add("active")
+            }
+        }
+
+        function getLocatStorage(oUl, taskList) {
+            var index = 0
+            for (var i = 0; i < localStorage.length; i++) {
+                oUl.innerHTML += `<li>${localStorage.getItem(i)}</li>`
+                taskList.push(`<li>${localStorage.getItem(i)}</li>`)
+                index += 1
+            }
+            return index
+        }
+    </script>
+</body>
+
+</html>
