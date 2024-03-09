@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            height: 100px;
+            width: 100px;
+            background-color: skyblue;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        box.onmousedown = function () {
+            console.log("0")
+
+            document.onmousemove = function (evt) {
+                var x = evt.clientX - box.offsetWidth / 2
+                var y = evt.clientY - box.offsetHeight / 2
+                if (y < 0) y = 0
+                if (x < 0) x = 0
+
+                if (x >= document.documentElement.clientWidth - box.offsetWidth) x = document.documentElement.clientWidth - box.offsetWidth
+
+                if (y >= document.documentElement.clientHeight - box.offsetHeight) y = document.documentElement.clientHeight - box.offsetHeight
+                box.style.left = x + "px"
+                box.style.top = y + "px"
+            }
+        }
+        box.onmouseup = function () {
+            console.log("1")
+            document.onmousemove = null
+        }
+    </script>
+</body>
+
+</html>
