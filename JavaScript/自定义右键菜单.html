@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            width: 200px;
+            padding: 10px;
+            border: 1px solid black;
+            display: none;
+            position: absolute;
+        }
+
+        ul>li:hover {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="list">
+        <li>11111</li>
+        <li>22222</li>
+        <li>33333</li>
+    </ul>
+    <script>
+        document.addEventListener("contextmenu", function (evt) {
+            evt.preventDefault()
+            list.style.display = "block"
+            var x = evt.clientX
+            var y = evt.clientY
+            if (x >= document.documentElement.clientWidth - list.offsetWidth) x = document.documentElement.clientWidth - list.offsetWidth
+            if (y >= document.documentElement.clientHeight - list.offsetHeight) y = document.documentElement.clientHeight - list.offsetHeight + 1
+            list.style.top = y + "px"
+            list.style.left = x + "px"
+        })
+        
+        document.addEventListener("click", (evt) => {
+            list.style.display = "none"
+            
+        })
+    </script>
+</body>
+
+</html>
