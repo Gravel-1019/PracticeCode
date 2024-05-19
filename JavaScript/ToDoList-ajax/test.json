@@ -1,12 +1,8 @@
 {
-    "list": [
-        {
-            "text": "aaa",
-            "id": 1
-        },
-        {
-            "text": "bbb",
-            "id": 2
-        }
-    ]
+  "list": [
+    {
+      "text": "bbb",
+      "id": "2"
+    }
+  ]
 }
